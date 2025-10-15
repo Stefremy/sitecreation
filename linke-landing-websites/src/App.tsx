@@ -4,7 +4,34 @@ import { Button } from './components/ui/button'
 import { Card, CardContent, CardHeader, CardTitle } from './components/ui/card'
 import { Input } from './components/ui/input'
 import { Textarea } from './components/ui/textarea'
-import { Check, Globe, ShoppingCart, Headphones, Truck, LineChart, Sparkles, ArrowRight, Shield } from 'lucide-react'
+import { Check, Globe, ShoppingCart, Headphones, LineChart, Sparkles, ArrowRight, Shield, GitGraphIcon } from 'lucide-react'
+
+function WhatsappIcon({ className = '' }: { className?: string }) {
+  return (
+    <svg className={className} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="24" height="24">
+      <path d="M20.52 3.48A11.82 11.82 0 0012 0C5.37 0 .01 5.36.01 12A11.9 11.9 0 002.4 17.7L0 24l6.5-2.14A11.91 11.91 0 0012 24c6.63 0 12-5.37 12-12 0-3.2-1.25-6.2-3.48-8.52zM12 21.5c-1.9 0-3.78-.5-5.36-1.45l-.38-.23L4.3 20l1.17-2.02-.25-.4A9.05 9.05 0 012.95 12 9.05 9.05 0 0112 2.95 9.05 9.05 0 0121.05 12 9.05 9.05 0 0112 21.5z" />
+      <path d="M17.6 14.2c-.3-.15-1.78-.88-2.05-.98-.27-.1-.47-.15-.67.15s-.77.98-.95 1.18c-.17.2-.33.22-.62.08-1.7-.85-2.81-1.52-3.94-3.44-.29-.5.29-.46.83-1.54.09-.2.04-.38-.02-.53-.06-.14-.67-1.6-.92-2.2-.24-.58-.49-.5-.67-.5-.17 0-.37-.01-.57-.01-.2 0-.53.07-.81.38-.27.31-1.03 1.01-1.03 2.46 0 1.44 1.05 2.83 1.2 3.02.15.2 2.07 3.32 5.03 4.53 2.96 1.22 2.96.81 3.5.76.53-.05 1.78-.72 2.03-1.41.25-.69.25-1.28.17-1.41-.08-.13-.27-.2-.57-.35z" />
+    </svg>
+  )
+}
+
+function BusinessCard({ name, role, phone, email, imageSrc }: { name: string; role: string; phone?: string; email?: string; imageSrc?: string }) {
+  return (
+    <div className="mt-4 flex w-full max-w-sm items-center gap-4 rounded-2xl border p-4">
+      {imageSrc ? (
+        <img src={imageSrc} alt={`${name} card`} className="h-16 w-28 rounded-md object-cover" />
+      ) : (
+        <div className="grid h-16 w-28 place-items-center rounded-md bg-neutral-100 text-sm">Imagem</div>
+      )}
+      <div className="flex-1">
+        <div className="text-sm font-semibold">{name}</div>
+        <div className="text-xs text-neutral-600">{role}</div>
+        {phone && <div className="mt-2 text-xs text-neutral-700">📞 {phone}</div>}
+        {email && <div className="text-xs text-neutral-700">✉️ {email}</div>}
+      </div>
+    </div>
+  )
+}
 
 export default function App() {
   return (
@@ -72,7 +99,7 @@ function Hero() {
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.1 }}
           >
-            Criamos (ou renovamos) o teu website focado em landing pages que convertem. Desenvolvemos a sua Webpage clara, rápida e otimizada para o Google — integrações prontas. Você paga o projeto, o site é seu.
+            Criamos (ou renovamos) o teu website. Desenvolvemos a sua Webpage clara, rápida e otimizada para o Google — integrações prontas. Você paga o projeto, o site é seu.
           </motion.p>
           <div className="mt-6 flex flex-col gap-3 sm:flex-row">
             <Button className="rounded-2xl" onClick={() => document.getElementById('contacto')?.scrollIntoView({behavior:'smooth'})}>
@@ -83,9 +110,9 @@ function Hero() {
             </Button>
           </div>
           <ul className="mt-6 grid gap-2 text-sm text-neutral-600">
-            <li className="flex items-center gap-2"><Check className="h-4 w-4"/>Checkout optimizado e tracking claro</li>
-            <li className="flex items-center gap-2"><Check className="h-4 w-4"/>Suporte omnicanal (email, chat, WhatsApp, redes)</li>
-            <li className="flex items-center gap-2"><Check className="h-4 w-4"/>Automação inteligente com IA</li>
+            <li className="flex items-center gap-2"><Check className="h-4 w-4"/>Feito para você — Design e texto sob medida para ti.</li>
+            <li className="flex items-center gap-2"><Check className="h-4 w-4"/>SEO já incluso — Otimizado para motores de busca.</li>
+            <li className="flex items-center gap-2"><Check className="h-4 w-4"/>Métricas ativas — Acompanhe desde o primeiro dia.</li>
           </ul>
         </div>
         <motion.div
@@ -114,7 +141,7 @@ function Trust() {
       <Container className="grid place-items-center gap-6 py-10">
         <p className="text-sm uppercase tracking-wide text-neutral-500">Integrado com as tuas ferramentas</p>
         <div className="grid w-full grid-cols-2 items-center gap-6 opacity-80 md:grid-cols-6">
-          {['Shopify','WooCommerce','Facebook','Instagram','WhatsApp','Messenger'].map((brand) => (
+          {['WhatsApp','Facebook','Instagram','Messenger','Email', 'Entre outros...'].map((brand) => (
             <div key={brand} className="grid place-items-center rounded-xl border p-4 text-sm">{brand}</div>
           ))}
         </div>
@@ -125,12 +152,12 @@ function Trust() {
 
 function ValueGrid() {
   const items = [
-    { icon: Globe, title: 'Website moderno', desc: 'Design rápido, SEO técnico e analytics prontos a usar.' },
-    { icon: ShoppingCart, title: 'Checkout que converte', desc: 'Pagamentos fluidos, upsell e recuperação de carrinho.' },
-  { icon: Truck, title: 'Logística e tracking', desc: 'Tracking nativo e gestão de entregas e devoluções.' },
+    { icon: Globe, title: 'Website moderno', desc: 'Design personalizado, SEO técnico e analytics prontos a usar.' },
+    { icon: ShoppingCart, title: 'Layout que converte', desc: 'Fluido, upsell e aumento carrinho.' },
     { icon: Headphones, title: 'Atendimento humanizado', desc: 'Omnicanal: email, chat e redes sociais num só sítio.' },
-    { icon: LineChart, title: 'Dados centralizados', desc: 'Pedidos, clientes, entregas e KPIs numa única vista.' },
-    { icon: Sparkles, title: 'Automação com IA', desc: 'Fluxos inteligentes para reduzir tempos e erros.' },
+  { icon: WhatsappIcon, title: 'Formulário + WhatsApp', desc: 'Formulário + WhatsApp já integrados.' },
+    { icon: GitGraphIcon, title: 'Feito para crescer', desc: 'Pode começar pequeno e evoluir quando o seu negócio precisar' },
+    { icon: Sparkles, title: 'Sem Mensalidades', desc: 'Você só paga uma vez; o site é seu.' },
   ]
   return (
     <section id="vantagens">
