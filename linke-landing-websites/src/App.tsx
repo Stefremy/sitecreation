@@ -63,7 +63,7 @@ function Hero() {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            Websites que <span className="underline decoration-amber-400">vendem</span> e pós‑venda que fideliza
+            Websites que <span className="underline decoration-amber-400">vendem</span> e SEM MENSALIDADES!
           </motion.h1>
           <motion.p
             className="mt-4 text-lg text-neutral-600"
@@ -72,8 +72,7 @@ function Hero() {
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.1 }}
           >
-            Criamos (ou renovamos) o teu website e ligamo‑lo a todo o ecossistema Linke: logística (TMS), atendimento humano,
-            integrações ERP/financeiras, marketing digital e automações com IA.
+            Criamos (ou renovamos) o teu website focado em landing pages que convertem. Desenvolvemos a sua Webpage clara, rápida e otimizada para o Google — integrações prontas. Você paga o projeto, o site é seu.
           </motion.p>
           <div className="mt-6 flex flex-col gap-3 sm:flex-row">
             <Button className="rounded-2xl" onClick={() => document.getElementById('contacto')?.scrollIntoView({behavior:'smooth'})}>
@@ -128,7 +127,7 @@ function ValueGrid() {
   const items = [
     { icon: Globe, title: 'Website moderno', desc: 'Design rápido, SEO técnico e analytics prontos a usar.' },
     { icon: ShoppingCart, title: 'Checkout que converte', desc: 'Pagamentos fluidos, upsell e recuperação de carrinho.' },
-    { icon: Truck, title: 'Logística com TMS', desc: 'Tracking nativo e gestão de entregas e devoluções.' },
+  { icon: Truck, title: 'Logística e tracking', desc: 'Tracking nativo e gestão de entregas e devoluções.' },
     { icon: Headphones, title: 'Atendimento humanizado', desc: 'Omnicanal: email, chat e redes sociais num só sítio.' },
     { icon: LineChart, title: 'Dados centralizados', desc: 'Pedidos, clientes, entregas e KPIs numa única vista.' },
     { icon: Sparkles, title: 'Automação com IA', desc: 'Fluxos inteligentes para reduzir tempos e erros.' },
@@ -164,7 +163,7 @@ function HowItWorks() {
   const steps = [
     { title: 'Diagnóstico gratuito', desc: 'Analisamos site, funil e operações.' },
     { title: 'Plano de acção', desc: 'Roadmap de UX, tech e integrações.' },
-    { title: 'Implementação', desc: 'Design/dev + ligações a TMS, ERP e canais.' },
+  { title: 'Implementação', desc: 'Design/dev + ligações a sistemas essenciais e canais.' },
     { title: 'Go‑live + Escala', desc: 'Testes, formação e automações com IA.' },
   ]
 
@@ -233,8 +232,8 @@ function Showcase() {
 
 function Plans() {
   const plans = [
-    { name: 'Launch', price: 'Sob orçamento', features: ['Site vitrine/landing ou loja inicial','Setup de pagamentos e impostos','Integração básica com Linke (tracking + CS)'] },
-    { name: 'Scale', price: 'Sob orçamento', features: ['Loja completa (Shopify/WooCommerce)','Checkout optimizado + upsell','Integrações TMS, ERP/financeiro e social','Automações com IA'], highlight: true },
+  { name: 'Launch', price: 'Sob orçamento', features: ['Site vitrine/landing ou loja inicial','Setup de pagamentos e impostos','Integração básica com Linke (tracking + CS)'] },
+  { name: 'Scale', price: 'Sob orçamento', features: ['Loja completa (Shopify/WooCommerce)','Checkout optimizado + upsell','Integrações essenciais (pagamentos, financeiro e social)','Automações com IA'], highlight: true },
     { name: 'Enterprise', price: 'Sob orçamento', features: ['Arquitectura headless / multi‑loja','SLA dedicado + segurança avançada','Relatórios e BI personalizados'] },
   ]
   return (
@@ -273,7 +272,7 @@ function Plans() {
 function FAQ() {
   const qa = [
     { q: 'Quanto tempo demora a entrega do website?', a: 'Depende do escopo. Landing pages: 2–4 semanas; lojas completas: 4–8 semanas, incluindo integrações e QA.' },
-    { q: 'Trabalham com a minha plataforma?', a: 'Sim: Shopify, WooCommerce e arquitecturas headless. Integramos com ERP/financeiro e canais sociais.' },
+  { q: 'Trabalham com a minha plataforma?', a: 'Sim: Shopify, WooCommerce e arquitecturas headless. Integramos com sistemas financeiros e canais sociais.' },
     { q: 'A Linke também cuida do pós‑venda?', a: 'Sim. Centralizamos tracking, atendimento e relatórios. Reduzimos tickets e aumentamos satisfação.' },
     { q: 'Posso começar com algo pequeno?', a: 'Claro. Começa no plano Launch e faz upgrade quando precisares.' },
   ]
@@ -329,7 +328,7 @@ function Contact() {
             <h3 className="text-xl font-semibold">O que está incluído</h3>
             <ul className="mt-4 space-y-2 text-neutral-700">
               <li className="flex items-center gap-2"><Check className="h-4 w-4"/>Auditoria de UX e performance</li>
-              <li className="flex items-center gap-2"><Check className="h-4 w-4"/>Mapa de integrações (TMS, ERP, canais)</li>
+              <li className="flex items-center gap-2"><Check className="h-4 w-4"/>Mapa de integrações (pagamentos, financeiro e canais)</li>
               <li className="flex items-center gap-2"><Check className="h-4 w-4"/>Plano de quick wins para 30 dias</li>
             </ul>
             <div className="mt-6 rounded-xl border bg-neutral-50 p-4 text-sm text-neutral-600">

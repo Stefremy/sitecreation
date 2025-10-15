@@ -1,0 +1,10 @@
+{
+  "name": "sitecreation-root",
+  "private": true,
+  "version": "0.0.0",
+  "scripts": {
+    "dev": "cd linke-landing-websites && npm run dev",
+    "dev:linke": "cd linke-landing-websites && npm run dev",
+    "install:linke": "cd linke-landing-websites && npm install"
+  }
+}
